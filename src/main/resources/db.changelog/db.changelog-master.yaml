@@ -1,0 +1,283 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: sergio
+      changes:
+        - createTable:
+            tableName: PAYMENT_OPTION
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: COUNTRY
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_paymentoption
+                    references: PAYMENT_OPTION(ID)
+              - column:
+                  name: COUNTRY_ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_country
+                    references: COUNTRY(ID)
+
+
+  - changeSet:
+      id: 2
+      author: sergio
+      changes:
+        - insert:
+            tableName: PAYMENT_OPTION
+            columns:
+              - column:
+                  name: ID
+                  value: 1
+              - column:
+                  name: NAME
+                  value: visa
+        - insert:
+            tableName: PAYMENT_OPTION
+            columns:
+              - column:
+                  name: ID
+                  value: 2
+              - column:
+                  name: NAME
+                  value: mastercard
+        - insert:
+            tableName: PAYMENT_OPTION
+            columns:
+              - column:
+                  name: ID
+                  value: 3
+              - column:
+                  name: NAME
+                  value: paypal
+        - insert:
+            tableName: PAYMENT_OPTION
+            columns:
+              - column:
+                  name: ID
+                  value: 4
+              - column:
+                  name: NAME
+                  value: prepaid card
+        - insert:
+            tableName: PAYMENT_OPTION
+            columns:
+              - column:
+                  name: ID
+                  value: 5
+              - column:
+                  name: NAME
+                  value: AcceptGiro
+        - insert:
+            tableName: COUNTRY
+            columns:
+              - column:
+                  name: ID
+                  value: 1
+              - column:
+                  name: NAME
+                  value: Spain
+        - insert:
+            tableName: COUNTRY
+            columns:
+              - column:
+                  name: ID
+                  value: 2
+              - column:
+                  name: NAME
+                  value: Netherlands
+        - insert:
+            tableName: COUNTRY
+            columns:
+              - column:
+                  name: ID
+                  value: 3
+              - column:
+                  name: NAME
+                  value: UK
+        - insert:
+            tableName: COUNTRY
+            columns:
+              - column:
+                  name: ID
+                  value: 4
+              - column:
+                  name: NAME
+                  value: Portugal
+        - insert:
+            tableName: COUNTRY
+            columns:
+              - column:
+                  name: ID
+                  value: 5
+              - column:
+                  name: NAME
+                  value: Canada
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 1
+              - column:
+                  name: COUNTRY_ID
+                  value: 1
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 1
+              - column:
+                  name: COUNTRY_ID
+                  value: 2
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 1
+              - column:
+                  name: COUNTRY_ID
+                  value: 3
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 1
+              - column:
+                  name: COUNTRY_ID
+                  value: 4
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 1
+              - column:
+                  name: COUNTRY_ID
+                  value: 5
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 2
+              - column:
+                  name: COUNTRY_ID
+                  value: 1
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 3
+              - column:
+                  name: COUNTRY_ID
+                  value: 1
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 2
+              - column:
+                  name: COUNTRY_ID
+                  value: 4
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 2
+              - column:
+                  name: COUNTRY_ID
+                  value: 5
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 3
+              - column:
+                  name: COUNTRY_ID
+                  value: 5
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 5
+              - column:
+                  name: COUNTRY_ID
+                  value: 5
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 5
+              - column:
+                  name: COUNTRY_ID
+                  value: 4
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 4
+              - column:
+                  name: COUNTRY_ID
+                  value: 2
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 3
+              - column:
+                  name: COUNTRY_ID
+                  value: 4
+        - insert:
+            tableName: PAYMENT_OPTION_COUNTRY
+            columns:
+              - column:
+                  name: PAYMENT_OPTION_ID
+                  value: 3
+              - column:
+                  name: COUNTRY_ID
+                  value: 2
