@@ -1,4 +1,4 @@
-package org.smartinrubio.springboottransparentcache;
+package org.smartinrubio.springboottransparentcache.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
